@@ -21,28 +21,33 @@ import { ReduxStore } from './Redux/reduxStore.js';
 import Info from './component/Info/Info';
 import CheckoutPage from './component/CheckoutPage/CheckoutPage.jsx';
 
-const Router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-{ index: true, element: <Products /> },
-      { path: 'register', element: <Register /> },
-      { path: 'login', element: <Login /> },
-      { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
-      { path: 'carts', element: <ProtectedRoute><Carts /></ProtectedRoute> },
-      { path: 'category', element: <ProtectedRoute><Category /></ProtectedRoute> },
-      { path: 'footer', element: <Footer /> },
-      { path: 'navbar', element: <Navbar /> },
-      { path: 'info', element: <Info /> },
-      { path: 'slider', element: <Slider /> },
-      { path: 'checkout', element: <CheckoutPage /> },
-      { path: 'productDetails/:id/:category', element: <Productdetails /> },
-      { path: 'loadar', element: <Loadar /> },
-      { path: '*', element: <NotFound /> },
-    ],
-  },
-]);
+const basename = "/ecommerce-store"; // غيّرها حسب اسم المستودع الخاص بك في GitHub
+
+const Router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        { path: 'footer', element: <Footer /> },
+        { path: 'carts', element: <ProtectedRoute><Carts /></ProtectedRoute> },
+        { path: '/', element: <Register /> },
+        { path: 'register', element: <Register /> },
+        { path: 'login', element: <Login /> },
+        { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
+        { path: 'category', element: <ProtectedRoute><Category /></ProtectedRoute> },
+        { path: 'navbar', element: <Navbar /> },
+        { path: 'info', element: <Info /> },
+        { path: 'slider', element: <Slider /> },
+        { path: 'checkout', element: <CheckoutPage /> },
+        { path: 'productDetails/:id/:category', element: <Productdetails /> },
+        { path: 'loadar', element: <Loadar /> },
+        { path: '*', element: <NotFound /> },
+      ],
+    },
+  ],
+  { basename }
+);
 
 function App() {
   return (
