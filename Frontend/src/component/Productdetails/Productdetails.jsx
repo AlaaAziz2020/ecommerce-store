@@ -45,13 +45,13 @@ const addProductItem = async (product) => {
 
     // Add product to cart using context
     addProductToCart(productData);
-    toast.success("تم إضافة المنتج إلى السلة!", {
+    toast.success("product added successfully", {
       duration: 4000,
       position: "top-left",
     });
   } catch (error) {
-    console.error("خطأ في إضافة المنتج إلى السلة:", error);
-    toast.error("حدث خطأ أثناء إضافة المنتج إلى السلة.", {
+    console.error("Something wrong while adding product to cart:", error);
+    toast.error("Something wrong while adding product to cart:", {
       duration: 4000,
       position: "top-left",
     });
