@@ -1,0 +1,37 @@
+.checkout-container {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* .checkout-form input,
+.checkout-form select {
+  padding: 10px;
+  margin-bottom
+::contentReference[oaicite:10]{index=10}
+  */
+  .confirm{
+    margin-bottom: 2%;
+
+  }
+  .checkout-card{
+    padding-left: 14%;
+    padding-right: 16%;
+  }

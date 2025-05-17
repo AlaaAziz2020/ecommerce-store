@@ -1,0 +1,210 @@
+.productsdetails-text{
+line-height: 2rem;
+text-align: left;
+}
+input{display: none;}
+/* صندوق تفاصيل المنتج */
+.productsdetails-container {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+  }
+  
+  /* صورة المنتج */
+  .productsdetails-container img {
+    border-radius: 12px;
+    max-height: 400px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* العنوان */
+  .productsdetails-container h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* وصف المنتج */
+  .productsdetails-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  /* الأزرار */
+  .productsdetails-container .btn-success {
+    background: linear-gradient(135deg, #00c896, #00b4d8);
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+  }
+  
+  .productsdetails-container .btn-success:hover {
+    background: linear-gradient(135deg, #00b4d8, #00c896);
+    transform: scale(1.02);
+  }
+  
+  /* تقييم النجوم */
+  .star-rating {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .star-rating svg {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .star-rating svg:hover {
+    transform: scale(1.2);
+  }
+  
+  /* صندوق التعليقات */
+  textarea {
+    width: 100%;
+    min-height: 120px;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  textarea:focus {
+    outline: none;
+    border-color: #00b4d8;
+    box-shadow: 0 0 5px rgba(0, 180, 216, 0.4);
+  }
+  
+  button[type="submit"] {
+    background-color: #0077b6;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    margin-top: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #023e8a;
+  }
+/* صندوق تفاصيل المنتج */
+.productsdetails-container {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+/* صورة المنتج */
+.productsdetails-container img {
+  border-radius: 12px;
+  max-height: 400px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* العنوان */
+.productsdetails-container h1 {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* وصف المنتج */
+.productsdetails-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* الأزرار */
+.productsdetails-container .btn-success {
+  background: linear-gradient(135deg, #00c896, #00b4d8);
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.productsdetails-container .btn-success:hover {
+  background: linear-gradient(135deg, #00b4d8, #00c896);
+  transform: scale(1.02);
+}
+
+/* تقييم النجوم */
+.star-rating {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.star-rating svg {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.star-rating svg:hover {
+  transform: scale(1.2);
+}
+
+/* صندوق التعليقات */
+textarea {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #00b4d8;
+  box-shadow: 0 0 5px rgba(0, 180, 216, 0.4);
+}
+
+button[type="submit"] {
+  background-color: #0077b6;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  margin-top: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #023e8a;
+}
+.submit button{width: 50%;}  

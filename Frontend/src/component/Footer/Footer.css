@@ -1,0 +1,66 @@
+/* .footer-bar{
+    padding-bottom: 1rem;
+
+} */
+/* Footer Styling */
+body{
+  font-family: 'PlaywriteDKLoopet', cursive;
+
+}
+.footer {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-family: 'Arial', sans-serif;
+    padding-top: 2rem;
+    animation: slideInUp 0.7s ease-out;
+  }
+  
+  .widget--info-box h4 {
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #333;
+  }
+  
+  .widget--info-box p {
+    margin: 0.4rem 0;
+    color: #555;
+  }
+  
+  .bottom-marg {
+    max-width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer Bar */
+  .footer-bar {
+    background-color: #e9ecef;
+    padding: 1rem 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Social Icons */
+  .widget--social a {
+    font-size: 20px;
+    color: #007bff;
+    margin-right: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .widget--social a:hover {
+    transform: scale(1.2);
+    color: #00b4d8;
+  }
+  
+  /* Entry Animation */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

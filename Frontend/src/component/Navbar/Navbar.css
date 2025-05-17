@@ -1,0 +1,89 @@
+
+body{
+    background-color: #fff;
+
+}
+/* .n{
+    background-position: fixed;
+} */
+.navbar{
+    /* background-color: #54d6ff; */
+    /* background-color: #5e8dd4; */
+     background-color: #0d6efd;
+    background: linear-gradient(135deg, #07698d, #00b4d8);
+
+    color:#fff;
+    /* background: linear-gradient(to right, #5e8dd4, #6fb1fc); */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+
+
+
+}
+
+.navbar .navbar-nav{
+    margin: auto;
+
+}
+.navbar .navbar-brand,.navbar .navbar-brand a,
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show,.nav-link{
+    color: #fff !important;
+}
+.Registeration{
+    margin:auto
+}
+/* .nav-link{
+    position: relative;
+} */
+.nav-link::before{
+    position: absolute;
+     width: 80%; 
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.8s;
+    /* position: relative; */
+
+}
+/* .nav-link::before:hover{
+  width: 100%;
+} */
+.navbar-brand img{
+  font-size: 48%;
+  /* width: 9%; */
+  width:40px;
+  border-radius: 50%;
+   margin-left: 30px; 
+}
+.navbar .nav-link,.navbar-brand {
+    transition:  0.8s ease;
+    animation: slideInLeft 0.8s ease-out forwards;
+    transform: translateX(-100%);
+    opacity: 0;
+
+  }
+
+  @keyframes slideInLeft {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+
+  }
+
+  /* .navbar .nav-link:hover{
+    position:relative;
+
+  } */
+
+  .navbar .nav-link:hover::before {
+    opacity: 1;
+    transform: scaleX(0.6);
+  }
+  .navbar .navbar-item:hover{
+    transition: all 0.8s ease;
+  }
