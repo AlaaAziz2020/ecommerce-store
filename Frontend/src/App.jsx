@@ -26,7 +26,7 @@ const Router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
-      { path: '/', element: <Products /> },
+{ index: true, element: <Products /> },
       { path: 'register', element: <Register /> },
       { path: 'login', element: <Login /> },
       { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
