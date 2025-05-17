@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import Layout from './component/Layout/Layout';
 import Carts from './component/Carts/Carts';
-import Register from './component/Register/Register'; // ✅ احتفظنا بواحد فقط
+import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import Products from './component/Products/Products';
 import Footer from './component/Footer/Footer';
