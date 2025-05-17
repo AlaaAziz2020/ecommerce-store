@@ -12,28 +12,28 @@ export default function Login() {
 
   async function handleLogin(formsData) {
     try {
-      // تأكد من URL صحيح مع https://
-      let { data } = await axios.post(
-        'https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users',
-        formsData
+      // جلب جميع المستخدمين من الـ API
+      const { data } = await axios.get(
+        'https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users'
       );
-      console.log('Login response data', data);
 
-      // توكن مقلد
-      const simulatedToken = 'mocked-jwt-token-12345';
+      // تحقق من تطابق بيانات المستخدم
+      const user = data.find(
+        (user) => user.email === formsData.email && user.pass === formsData.pass
+      );
 
-      // شرط صحيح للمقارنة
-      if (simulatedToken) {
+      if (user) {
+        const simulatedToken = 'mocked-jwt-token-12345';
         localStorage.setItem('userToken', simulatedToken);
         setLogin(simulatedToken);
-        console.log('Token saved in localStorage:', simulatedToken);
-        navigate('/products'); // تحويل لصفحة المنتجات بعد تسجيل الدخول
+        console.log('✅ Login successful. Token saved.');
+        navigate('/products');
       } else {
-        console.error('No token received');
+        alert('❌ Email or Password is incorrect.');
         navigate('/login');
       }
     } catch (error) {
-      console.error(error.message);
+      console.error('❌ Login error:', error.message);
       navigate('/notfound');
     }
   }
@@ -42,7 +42,10 @@ export default function Login() {
     email: Yup.string().required('Email is required').email('Enter a valid email'),
     pass: Yup.string()
       .required('Password is required')
-      .matches(/^[A-Z][a-z0-9]{6,8}$/, 'Password must start with an uppercase letter and be 6-8 characters long'),
+      .matches(
+        /^[A-Z][a-z0-9]{6,8}$/,
+        'Password must start with an uppercase letter and be 6-8 characters long'
+      ),
   });
 
   const formik = useFormik({
@@ -87,7 +90,7 @@ export default function Login() {
                         value={formik.values.pass}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        placeholder="Create your password"
+                        placeholder="Enter your password"
                       />
                       {formik.touched.pass && formik.errors.pass && (
                         <div className="text-danger">{formik.errors.pass}</div>
