@@ -13,11 +13,11 @@ export default function Login() {
 
   async function handleLogin(formsData) {
     try {
-      // الحصول على جميع المستخدمين
+      // جلب جميع المستخدمين
       let { data } = await axios.get('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users');
 
-      // البحث عن المستخدم الذي يطابق البريد وكلمة السر
-      const matchedUser = data.find(user => user.email === formsData.email && user.pass === formsData.pass);
+      // البحث عن المستخدم المطابق بالبريد وكلمة السر (مراعاة أن الحقل password)
+      const matchedUser = data.find(user => user.email === formsData.email && user.password === formsData.pass);
 
       if (matchedUser) {
         const simulatedToken = 'mocked-jwt-token-12345';
@@ -52,7 +52,7 @@ export default function Login() {
     <div>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
-          <form onSubmit={formik.handleSubmit} className="card" method="get">
+          <form onSubmit={formik.handleSubmit} className="card">
             <div className="form-box">
               <div className="form-snip">
                 <label className="tab text-white">Login</label>
@@ -81,29 +81,4 @@ export default function Login() {
                         type="password"
                         name="pass"
                         className="input"
-                        value={formik.values.pass}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        placeholder="Create your password"
-                      />
-                      {formik.touched.pass && formik.errors.pass && (
-                        <div className="text-white">{formik.errors.pass}</div>
-                      )}
-                    </div>
-                    <div className="group">
-                      <input type="submit" id="Login" className="button mt-4" value="Login" />
-                    </div>
-                    <div className="hr mt-3"></div>
-                    <div className="foot mt-3">
-                      <Link to="/register" className='register-btn text-white mt-3'>Create your account?</Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
+                        value={formik
