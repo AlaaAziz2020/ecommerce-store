@@ -13,10 +13,9 @@ export default function Login() {
 
   async function handleLogin(formsData) {
     try {
-      // جلب جميع المستخدمين
-      let { data } = await axios.get('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users');
+      const { data } = await axios.get('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users');
 
-      // البحث عن المستخدم المطابق بالبريد وكلمة السر (مراعاة أن الحقل password)
+      // البحث عن المستخدم المطابق
       const matchedUser = data.find(user => user.email === formsData.email && user.password === formsData.pass);
 
       if (matchedUser) {
@@ -26,12 +25,12 @@ export default function Login() {
         console.log("Token saved in localStorage:", simulatedToken);
         navigate('/products');
       } else {
-        console.error("Invalid email or password");
         alert('Invalid email or password');
       }
     } catch (error) {
-      console.error('Login Error:', error.message);
-      navigate('/notfound');
+      console.error('Login Error:', error.response ? error.response.data : error.message);
+      alert('Login failed: ' + (error.response?.data?.message || error.message));
+      // لا توجه ل notfound مباشرة في حالة الخطأ في البيانات
     }
   }
 
@@ -44,41 +43,64 @@ export default function Login() {
 
   const formik = useFormik({
     initialValues: { email: '', pass: '' },
-    validationSchema: validationSchema,
+    validationSchema,
     onSubmit: handleLogin,
   });
 
   return (
-    <div>
-      <div className="row">
-        <div className="col-md-6 mx-auto p-0">
-          <form onSubmit={formik.handleSubmit} className="card">
-            <div className="form-box">
-              <div className="form-snip">
-                <label className="tab text-white">Login</label>
-                <div className="form-space">
-                  <div className="Login-Form">
-                    <div className="group">
-                      <label htmlFor="email" className="label m-2">Email Address</label>
-                      <input
-                        id="email"
-                        type="text"
-                        className="input"
-                        name="email"
-                        value={formik.values.email}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        placeholder="Enter your email address"
-                      />
-                      {formik.touched.email && formik.errors.email && (
-                        <div className="text-white">{formik.errors.email}</div>
-                      )}
-                    </div>
-                    <div className="group">
-                      <label htmlFor="pass" className="label m-2">Password</label>
-                      <input
-                        id="pass"
-                        type="password"
-                        name="pass"
-                        className="input"
-                        value={formik
+    <div className="row">
+      <div className="col-md-6 mx-auto p-0">
+        <form onSubmit={formik.handleSubmit} className="card">
+          <div className="form-box">
+            <div className="form-snip">
+              <label className="tab text-white">Login</label>
+              <div className="form-space">
+                <div className="Login-Form">
+                  <div className="group">
+                    <label htmlFor="email" className="label m-2">Email Address</label>
+                    <input
+                      id="email"
+                      type="text"
+                      className="input"
+                      name="email"
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      placeholder="Enter your email address"
+                    />
+                    {formik.touched.email && formik.errors.email && (
+                      <div className="text-white">{formik.errors.email}</div>
+                    )}
+                  </div>
+                  <div className="group">
+                    <label htmlFor="pass" className="label m-2">Password</label>
+                    <input
+                      id="pass"
+                      type="password"
+                      name="pass"
+                      className="input"
+                      value={formik.values.pass}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      placeholder="Create your password"
+                    />
+                    {formik.touched.pass && formik.errors.pass && (
+                      <div className="text-white">{formik.errors.pass}</div>
+                    )}
+                  </div>
+                  <div className="group">
+                    <input type="submit" id="Login" className="button mt-4" value="Login" />
+                  </div>
+                  <div className="hr mt-3"></div>
+                  <div className="foot mt-3">
+                    <Link to="/register" className='register-btn text-white mt-3'>Create your account?</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
