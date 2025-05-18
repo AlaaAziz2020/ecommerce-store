@@ -1,38 +1,31 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../Register/Register.css';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
-import { userContext } from '../../Context/userContext';
 
 export default function Register() {
-  const { setLogin } = useContext(userContext);
   const navigate = useNavigate();
 
   async function handleRegister(formsData) {
     try {
-      // ارسال بيانات التسجيل إلى MockAPI
-      let { data } = await axios.post('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users', formsData);
+      // إرسال بيانات التسجيل فقط بالحقول الضرورية وبأسماء مناسبة للAPI
+      const postData = {
+        username: formsData.user,
+        email: formsData.email,
+        password: formsData.pass,
+      };
+
+      let { data } = await axios.get('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users', postData);
       console.log('Registration response data', data);
 
-      // محاكاة التوكن (JWT token)
-      const simulatedToken = 'mocked-jwt-token-12345';
-
-      // تم تعديل شرط التحقق ليكون مقارنة (==) وليس تعيين (=)
-      if (simulatedToken === 'mocked-jwt-token-12345') {
-        localStorage.setItem('userToken', simulatedToken);
-        setLogin(simulatedToken);
-        console.log("Token saved in localStorage:", simulatedToken);
-        navigate('/login'); // التنقل لصفحة تسجيل الدخول بعد التسجيل
-      } else {
-        console.error("No data returned");
-        navigate('/register'); // البقاء في صفحة التسجيل في حال الفشل
-      }
+      // التوجيه لصفحة تسجيل الدخول بعد نجاح التسجيل
+      navigate('/login');
     } catch (error) {
       console.error('Registration Error:', error.message);
-      navigate('/notfound'); // الانتقال لصفحة خطأ في حال حدوث مشكلة
+      navigate('/notfound');
     }
   }
 
@@ -93,7 +86,7 @@ export default function Register() {
                       <label htmlFor="email" className="label m-2">Email Address</label>
                       <input
                         id="email"
-                        type="text"
+                        type="email"
                         className="input"
                         name="email"
                         value={formik.values.email}
