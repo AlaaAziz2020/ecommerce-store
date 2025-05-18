@@ -22,7 +22,7 @@ export default function Login() {
       if (matchedUser) {
         const simulatedToken = 'mocked-jwt-token-12345';
         localStorage.setItem('userToken', simulatedToken);
-        setLogin(simulatedToken);
+        setLogin(true);
         console.log("Token saved in localStorage:", simulatedToken);
         navigate('/products');
       } else {
