@@ -87,7 +87,7 @@ export default function Login() {
                         placeholder="Create your password"
                       />
                       {formik.touched.pass && formik.errors.pass && (
-                        <div className="text-danger">{formik.errors.pass}</div>
+                        <div className="">{formik.errors.pass}</div>
                       )}
                     </div>
                     <div className="group">
