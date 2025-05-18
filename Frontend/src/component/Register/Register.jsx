@@ -9,25 +9,23 @@ import { Link } from 'react-router-dom';
 export default function Register() {
   const navigate = useNavigate();
 
-  async function handleRegister(formsData) {
-    try {
-      // إرسال بيانات التسجيل فقط بالحقول الضرورية وبأسماء مناسبة للAPI
-      const postData = {
-        username: formsData.user,
-        email: formsData.email,
-        password: formsData.pass,
-      };
+ async function handleRegister(formsData) {
+  try {
+    const postData = {
+      username: formsData.user,
+      email: formsData.email,
+      password: formsData.pass,
+    };
 
-      let { data } = await axios.get('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users', postData);
-      console.log('Registration response data', data);
+    let { data } = await axios.post('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users', postData);
+    console.log('Registration response data', data);
 
-      // التوجيه لصفحة تسجيل الدخول بعد نجاح التسجيل
-      navigate('/login');
-    } catch (error) {
-      console.error('Registration Error:', error.message);
-      navigate('/notfound');
-    }
+    navigate('/login');
+  } catch (error) {
+    console.error('Registration Error:', error.message);
+    navigate('/notfound');
   }
+}
 
   const validationSchema = Yup.object({
     user: Yup.string()
