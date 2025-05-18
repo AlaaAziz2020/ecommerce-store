@@ -5,14 +5,14 @@ import Carts from './component/Carts/Carts';
 import Register from './component/Register/Register';
 import Login from './component/Login/Login';
 import Products from './component/Products/Products';
-import Footer from './component/Footer/Footer';
+// import Footer from './component/Footer/Footer';
 import NotFound from './component/NotFound/NotFound';
 import Productdetails from './component/Productdetails/Productdetails';
 import Loadar from './component/Loadar/Loadar';
 import Category from './component/Category/Category';
 import UserContextProvider from './Context/userContext';
 import CartContextProvider from './Context/cartContext.jsx';
-import Navbar from './component/Navbar/Navbar.jsx';
+// import Navbar from './component/Navbar/Navbar.jsx';
 import Slider from './component/Slider/Slider.jsx';
 import ProtectedRoute from './component/protectedRoute/protectedRoute.jsx';
 import { Toaster } from 'react-hot-toast';
@@ -21,7 +21,7 @@ import { ReduxStore } from './Redux/reduxStore.js';
 import Info from './component/Info/Info';
 import CheckoutPage from './component/CheckoutPage/CheckoutPage.jsx';
 
-const basename = "/ecommerce-store"; // غيّرها حسب اسم المستودع الخاص بك في GitHub
+// const basename = "/ecommerce-store"; // غيّرها حسب اسم المستودع الخاص بك في GitHub
 
 const Router = createBrowserRouter(
   [
@@ -29,14 +29,13 @@ const Router = createBrowserRouter(
       path: '/',
       element: <Layout />,
       children: [
-        { path: 'footer', element: <Footer /> },
-        { path: 'carts', element: <ProtectedRoute><Carts /></ProtectedRoute> },
-        { path: '/', element: <Register /> },
+        { index: true, element: <Register /> }, // ✅ صفحة البداية
         { path: 'register', element: <Register /> },
+
         { path: 'login', element: <Login /> },
+        { path: 'carts', element: <ProtectedRoute><Carts /></ProtectedRoute> },
         { path: 'products', element: <ProtectedRoute><Products /></ProtectedRoute> },
         { path: 'category', element: <ProtectedRoute><Category /></ProtectedRoute> },
-        { path: 'navbar', element: <Navbar /> },
         { path: 'info', element: <Info /> },
         { path: 'slider', element: <Slider /> },
         { path: 'checkout', element: <CheckoutPage /> },
@@ -46,7 +45,6 @@ const Router = createBrowserRouter(
       ],
     },
   ],
-  { basename }
 );
 
 function App() {
