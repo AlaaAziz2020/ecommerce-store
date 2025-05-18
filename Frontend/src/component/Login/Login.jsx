@@ -52,7 +52,7 @@ export default function Login() {
     <div>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
-          <form onSubmit={formik.handleSubmit} className="card" method="post">
+          <form onSubmit={formik.handleSubmit} className="card" method="get">
             <div className="form-box">
               <div className="form-snip">
                 <label className="tab text-white">Login</label>
