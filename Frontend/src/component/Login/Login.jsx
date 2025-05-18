@@ -14,7 +14,7 @@ export default function Login() {
   async function handleLogin(formsData) {
     try {
       // الحصول على جميع المستخدمين
-      let { data } = await axios.get('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users');
+      let { data } = await axios.post('https://672a9094976a834dd023c8c4.mockapi.io/api/Hamzasports/users');
 
       // البحث عن المستخدم الذي يطابق البريد وكلمة السر
       const matchedUser = data.find(user => user.email === formsData.email && user.pass === formsData.pass);
