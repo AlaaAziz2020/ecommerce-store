@@ -55,7 +55,7 @@ export default function Login() {
           <form onSubmit={formik.handleSubmit} className="card" method="post">
             <div className="form-box">
               <div className="form-snip">
-                <label className="tab text-success">Login</label>
+                <label className="tab text-white">Login</label>
                 <div className="form-space">
                   <div className="Login-Form">
                     <div className="group">
@@ -71,7 +71,7 @@ export default function Login() {
                         placeholder="Enter your email address"
                       />
                       {formik.touched.email && formik.errors.email && (
-                        <div className="text-success">{formik.errors.email}</div>
+                        <div className="text-white">{formik.errors.email}</div>
                       )}
                     </div>
                     <div className="group">
@@ -87,7 +87,7 @@ export default function Login() {
                         placeholder="Create your password"
                       />
                       {formik.touched.pass && formik.errors.pass && (
-                        <div className="text-success">{formik.errors.pass}</div>
+                        <div className="text-white">{formik.errors.pass}</div>
                       )}
                     </div>
                     <div className="group">
@@ -95,7 +95,7 @@ export default function Login() {
                     </div>
                     <div className="hr mt-3"></div>
                     <div className="foot mt-3">
-                      <Link to="/register" className='register-btn text-success mt-3'>Create your account?</Link>
+                      <Link to="/register" className='register-btn text-white mt-3'>Create your account?</Link>
                     </div>
                   </div>
                 </div>
