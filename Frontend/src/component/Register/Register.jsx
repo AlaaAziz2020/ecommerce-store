@@ -79,7 +79,7 @@ export default function Register() {
                         placeholder="Create your Username"
                       />
                       {formik.touched.user && formik.errors.user ? (
-                        <div className="text-danger">{formik.errors.user}</div>
+                        <div className="text-white">{formik.errors.user}</div>
                       ) : null}
                     </div>
                     <div className="group">
@@ -95,7 +95,7 @@ export default function Register() {
                         placeholder="Enter your email address"
                       />
                       {formik.touched.email && formik.errors.email ? (
-                        <div className="text-danger">{formik.errors.email}</div>
+                        <div className="text-white">{formik.errors.email}</div>
                       ) : null}
                     </div>
                     <div className="group">
@@ -111,7 +111,7 @@ export default function Register() {
                         placeholder="Create your password"
                       />
                       {formik.touched.pass && formik.errors.pass ? (
-                        <div className="text-danger">{formik.errors.pass}</div>
+                        <div className="text-white">{formik.errors.pass}</div>
                       ) : null}
                     </div>
                     <div className="group">
@@ -127,7 +127,7 @@ export default function Register() {
                         placeholder="Confirm your password"
                       />
                       {formik.touched.cpwd && formik.errors.cpwd ? (
-                        <div className="text-danger">{formik.errors.cpwd}</div>
+                        <div className="text-white">{formik.errors.cpwd}</div>
                       ) : null}
                     </div>
                     <div className="group">
