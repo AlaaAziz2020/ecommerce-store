@@ -60,7 +60,7 @@ export default function Register() {
     <div>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
-          <form onSubmit={formik.handleSubmit} method="post">
+          <form onSubmit={formik.handleSubmit} method="get">
             <div className="form-box">
               <div className="form-snip">
                 <label htmlFor="tab-2" className="tab text-white">Register</label>
