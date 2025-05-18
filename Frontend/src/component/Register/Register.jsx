@@ -63,7 +63,7 @@ export default function Register() {
           <form onSubmit={formik.handleSubmit} method="post">
             <div className="form-box">
               <div className="form-snip">
-                <label htmlFor="tab-2" className="tab text-success">Register</label>
+                <label htmlFor="tab-2" className="tab text-white">Register</label>
                 <div className="form-space">
                   <div className="Register-Form">
                     <div className="group">
@@ -79,7 +79,7 @@ export default function Register() {
                         placeholder="Create your Username"
                       />
                       {formik.touched.user && formik.errors.user ? (
-                        <div className="text-success">{formik.errors.user}</div>
+                        <div className="text-white">{formik.errors.user}</div>
                       ) : null}
                     </div>
                     <div className="group">
@@ -95,7 +95,7 @@ export default function Register() {
                         placeholder="Enter your email address"
                       />
                       {formik.touched.email && formik.errors.email ? (
-                        <div className="text-success">{formik.errors.email}</div>
+                        <div className="text-white">{formik.errors.email}</div>
                       ) : null}
                     </div>
                     <div className="group">
@@ -111,7 +111,7 @@ export default function Register() {
                         placeholder="Create your password"
                       />
                       {formik.touched.pass && formik.errors.pass ? (
-                        <div className="text-success">{formik.errors.pass}</div>
+                        <div className="text-white">{formik.errors.pass}</div>
                       ) : null}
                     </div>
                     <div className="group">
@@ -127,7 +127,7 @@ export default function Register() {
                         placeholder="Confirm your password"
                       />
                       {formik.touched.cpwd && formik.errors.cpwd ? (
-                        <div className="text-success">{formik.errors.cpwd}</div>
+                        <div className="text-white">{formik.errors.cpwd}</div>
                       ) : null}
                     </div>
                     <div className="group">
@@ -135,7 +135,7 @@ export default function Register() {
                     </div>
                     <div className="hr mt-3"></div>
                     <div className="foot mt-3">
-                      <Link to="/login" className="register-btn text-success mt-3">Already a Member?</Link>
+                      <Link to="/login" className="register-btn text-white mt-3">Already a Member?</Link>
                     </div>
                   </div>
                 </div>
