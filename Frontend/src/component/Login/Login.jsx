@@ -71,7 +71,7 @@ export default function Login() {
                         placeholder="Enter your email address"
                       />
                       {formik.touched.email && formik.errors.email && (
-                        <div className="text-danger">{formik.errors.email}</div>
+                        <div className="text-white">{formik.errors.email}</div>
                       )}
                     </div>
                     <div className="group">
@@ -87,7 +87,7 @@ export default function Login() {
                         placeholder="Create your password"
                       />
                       {formik.touched.pass && formik.errors.pass && (
-                        <div className="">{formik.errors.pass}</div>
+                        <div className="text-white">{formik.errors.pass}</div>
                       )}
                     </div>
                     <div className="group">
