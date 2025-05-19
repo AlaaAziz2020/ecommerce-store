@@ -9,8 +9,8 @@
 }
 
 body {
-  font-family: 'PlaywriteDKLoopet', cursive;
-   /* font-family: 'Arial', sans-serif; */
+  /*  font-family: 'PlaywriteDKLoopet', cursive;*/
+  font-family: 'Arial', sans-serif; 
     /* background-color: #cce2f05e; */
     color: #333;
     background-color: #466a9f33;
